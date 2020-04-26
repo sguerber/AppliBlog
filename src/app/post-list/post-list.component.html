@@ -1,0 +1,16 @@
+
+  <h2>Liste des posts</h2>
+	  
+      <ul class="list-group">
+      <app-post-list-item  *ngFor="let post of posts; let i=index"
+                   [postTitle]="post.title"
+                   [postContent]="post.content"
+                   [postLoveIts]="post.loveIts"
+                   [postCreatedAt]="post.created_at"
+				   [index]="i"
+				   [id]="post.id">
+			</app-post-list-item >
+	  </ul>
+  <button class="btn btn-primary" (click)="onNewPost()">Nouveau post</button>
+  
+       
