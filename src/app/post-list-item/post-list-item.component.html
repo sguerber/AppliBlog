@@ -1,14 +1,12 @@
 <li [ngClass]="{'list-group-item': true,
                 'list-group-item-success': postLoveIts>0,
                 'list-group-item-danger': postLoveIts<0}">
-  <div style="width:20px;height:20px;background-color:red;"
-       *ngIf="postLoveIts<0"></div>
-  <h4 [ngStyle]="{color: getColor()}">Title : {{ postTitle }} -- Date de publication : {{ postCreatedAt | date : 'dd MMMM y' }}</h4>
+  <h4 [ngStyle]="{color: onGetColor()}">Title : {{ postTitle }} -- Date de publication : {{ postCreatedAt | date : 'dd MMMM y' }}</h4>
   <p>{{postContent}}</p>
   <button class="btn btn-default pull-right" (click)="onDeletePost()">
      <span class="glyphicon glyphicon-minus"></span>
   </button>
-  <button class="btn btn-success" (click)="ajoutLike()">Like</button>
-  <button class="btn btn-danger" (click)="retraitLike()">Dislike</button> 
+  <button class="btn btn-success" (click)="onAjoutLike()">Like</button>
+  <button class="btn btn-danger" (click)="onRetraitLike()">Dislike</button> 
   <span> Nombre de like(s): {{postLoveIts}}</span>
 </li>

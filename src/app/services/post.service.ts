@@ -34,12 +34,6 @@ export class PostService {
     console.log("push ok");
     this.emitPosts();
   }
-
-  
-
-  
-  
- 
   
   // Méthode qui supprime un post 
   deletePost(i:number) {
@@ -48,8 +42,32 @@ export class PostService {
     this.emitPosts();
   }
 
-  
+  ajoutLike(i:number)
+  {
+    this.posts[i].loveIts=this.posts[i].loveIts+1;
+    this.emitPosts();
+  }
 
-  
+  retraitLike(i:number)
+  {
+    this.posts[i].loveIts=this.posts[i].loveIts-1;
+    this.emitPosts();
+  }
+
+  getColor(i:number)
+  {
+   
+    if(this.posts[i].loveIts <0 ) {
+      return 'red';
+    }
+    else if (this.posts[i].loveIts>0)
+    {
+      return 'green';
+    }
+    else
+    {
+      return 'black';
+    }
+  }
   
 }

@@ -35,7 +35,6 @@ const appRoutes: Routes = [
   ],
   providers: [
     PostService
-
   ],
   bootstrap: [AppComponent]
 })

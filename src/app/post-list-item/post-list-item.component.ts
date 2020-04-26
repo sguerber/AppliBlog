@@ -23,27 +23,16 @@ export class PostListItemComponent implements OnInit {
   ngOnInit() { 
   }
 
-  getColor()
+  
+
+  onAjoutLike()
   {
-   
-    if(this.postLoveIts <0 ) {
-      return 'red';
-    }
-    else if (this.postLoveIts>0)
-    {
-      return 'green';
-    }
-    else
-    {
-      return 'black';
-    }
+    this.postService.ajoutLike(this.index);
   }
 
-  ajoutLike()
+  onRetraitLike()
   {
-    this.postLoveIts= this.postLoveIts+1;
-    console.log('+1 like !' +' loveIts : ' + this.postLoveIts);
-    
+    this.postService.retraitLike(this.index);
   }
 
   onDeletePost()
@@ -51,42 +40,11 @@ export class PostListItemComponent implements OnInit {
     this.postService.deletePost(this.index);
   }
 
-  retraitLike()
-  {
-    /*
-    const postIndexToRetraitLike = this.posts.findIndex(
-    (postEl) => {
-        if(postEl === post) {
-        return true;
-        }
-    }
-    );
-    */
-   this.postLoveIts= this.postLoveIts-1;
-    console.log('-1 like !' +' loveIts : ' + this.postLoveIts);
-    /*
-    this.savePosts();
-    this.emitPosts();
-    */
-  }
-
-  /*
-
-  onAjoutLike()
-  {
-    this.postService.ajoutLike();
-  }
-
-  onRetraitLike()
-  {
-    this.postService.retraitLike();
-  }
-
   onGetColor()
   {
-    this.postService.getColor();
+    this.postService.getColor(this.index);
   }
-  */
+  
 
 }
 
